@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ title }}</title>
+        <title>ImgNews</title>
 
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -15,25 +15,29 @@
         <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
         <style>
-
+            
             .rounded-corners {
-                height: 50px;
-                width: 50px;
-                -moz-border-radius: 300px;
-                border-radius: 300px;
-                -webkit-border-radius: 300px;
-                margin: 0;
-                padding: 0;
+                background-size: 32px 32px;
+                width: 32px;
+                height: 32px;
+                display: inline-block;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+                margin-right: 5px;
             }
-            .navbar-cust-1, .navbar-cust navbar-brand {
-                font-size: 30px;
-                vertical-align: bottom;
+            
+            .img-nav-margin {
+                margin: -10px 5px -10px 0px;
+            }
+            
+            .navbar-brand .img-nav-margin {
+                margin: -30px 0px -25px -10px;
             }
 
         </style>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-to-top navbar-cust-1" role="navigation">
+        <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-to-top" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -43,20 +47,20 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Brand</a>
+                    <a class="navbar-brand" href="#">
+                        <img src="../../static/imgLogo.png" class="img-nav-margin" alt="imgNews">
+                    </a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <div class="pull-left navbar-text">
-                                <img class="rounded-corners" src="http://cdn.denimblog.com/b/be/60x60px-ZC-be014b15_thanaz2.jpeg" alt="User">
-                            </div>
-                        </li>
                         <li class="dropdown">
-                            
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pablo <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="https://lh3.googleusercontent.com/-BaIE40A70vE/AAAAAAAAAAI/AAAAAAAAAAA/QPWSH3lNXz4/s32-c/photo.jpg" class="rounded-corners img-nav-margin"></span>
+                                <span>Pablo Dorado</span>
+                                <b class="caret"></b>
+                            </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
@@ -69,8 +73,6 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-
-        <h1>Hello, Lampara!</h1>
 
     </body>
 </html>
