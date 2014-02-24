@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +16,7 @@
         <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
         <style>
-            
+
             .rounded-corners {
                 background-size: 32px 32px;
                 width: 32px;
@@ -25,19 +26,40 @@
                 border-radius: 50%;
                 margin-right: 5px;
             }
-            
+
             .img-nav-margin {
                 margin: -10px 5px -10px 0px;
             }
-            
+
             .navbar-brand .img-nav-margin {
                 margin: -30px 0px -25px -10px;
             }
 
+            .frm {
+                padding: 15px;
+            }
+
+            .frm-g {
+                padding: 0px 15px;
+            }
+
+            .centered
+            {
+                text-align:center;
+            }
+
+            .btn-large {
+                width: 95%;
+            }
+
         </style>
+
     </head>
+
     <body>
+
         <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-to-top" role="navigation">
+
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -54,25 +76,48 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
+                            {% if authenticated %}
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="https://lh3.googleusercontent.com/-BaIE40A70vE/AAAAAAAAAAI/AAAAAAAAAAA/QPWSH3lNXz4/s32-c/photo.jpg" class="rounded-corners img-nav-margin"></span>
+                                <img src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-frc3/t1/1459800_10201750836828467_959183656_n.jpg" class="rounded-corners img-nav-margin">
                                 <span>Pablo Dorado</span>
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">Cerrar sesión</a></li>
                             </ul>
+                            {% else %}
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span>Iniciar sesión</span>
+                                <b class="caret"></b>
+                            </a>
+                            <form class="dropdown-menu form-horizontal frm" role="form" action="/login" method="post" accept-charset="UTF-8">
+                                <div class="form-group frm-g">
+                                    <input id="user_username" type="text" name="user[username]" size="30" placeholder="Nombre de usuario" />  
+                                </div>
+                                <div class="form-group frm-g">
+                                    <input id="user_password" type="password" name="user[password]" size="30" placeholder="Contraseña" />
+                                </div>
+                                <div class="form-group frm-g">
+                                    <input id="user_remember_me" type="checkbox" name="user[remember_me]" />
+                                    <label class="string optional" for="user_remember_me"> Recordarme</label>
+                                </div>
+                                <div class="form-group frm-g centered">    
+                                    <input class="btn btn-primary btn-large" type="submit" name="commit" value="Iniciar sesión" />
+                                </div>
+                            </form>
+                            {% endif %}
                         </li>
                     </ul>
+
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
+
         </nav>
 
     </body>
+
 </html>
