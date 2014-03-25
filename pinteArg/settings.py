@@ -36,6 +36,7 @@ INSTALLED_APPS = (
 'django.contrib.sessions',
 'django.contrib.messages',
 'django.contrib.staticfiles',
+'django_extensions',
 'baseMod'
 )
 
@@ -58,15 +59,21 @@ WSGI_APPLICATION = 'pinteArg.wsgi.application'
 
 DATABASES = {
 'default': {
-'ENGINE': 'django.db.backends.sqlite3',
-'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+'ENGINE': 'django.db.backends.mysql',
+'HOST':'127.0.0.1',
+'PASSWORD':'',
+'USER':'root',
+'PASSWORD':'Andr3s_Loquillo',
+'NAME':'imgnews'
+#'ENGINE': 'django.db.backends.sqlite3',
+#'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 }
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-ar'
 
 TIME_ZONE = 'UTC'
 
