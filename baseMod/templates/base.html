@@ -31,7 +31,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{% url 'Inicio' %}">
                         <img src="{% static 'imgLogo.png' %}" class="img-nav-margin" alt="imgNews">
                     </a>
                 </div>
@@ -44,28 +44,24 @@
                             {% if authenticated %}
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-frc3/t1/1459800_10201750836828467_959183656_n.jpg" class="rounded-corners img-nav-margin">
-                                <span>Pablo Dorado</span>
+                                <span>{{ user.first_name }} {{ user.last_name }}</span>
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="divider"></li>
-                                <li><a href="#">Cerrar sesión</a></li>
+                                <li><a href="{% url 'Logout' %}">Cerrar sesión</a></li>
                             </ul>
                             {% else %}
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <span>Iniciar sesión</span>
                                 <b class="caret"></b>
                             </a>
-                            <form class="dropdown-menu form-horizontal frm" role="form" action="/login" method="post" accept-charset="UTF-8">
+                            <form class="dropdown-menu form-horizontal frm" role="form" action="{% url 'Login' %}" method="post" accept-charset="UTF-8">{% csrf_token %}
                                 <div class="form-group frm-g">
-                                    <input id="user_username" type="text" name="user[username]" size="30" placeholder="Nombre de usuario" />  
+                                    <input id="user_username" type="text" name="username" size="30" placeholder="Nombre de usuario" />
                                 </div>
                                 <div class="form-group frm-g">
-                                    <input id="user_password" type="password" name="user[password]" size="30" placeholder="Contraseña" />
-                                </div>
-                                <div class="form-group frm-g">
-                                    <input id="user_remember_me" type="checkbox" name="user[remember_me]" />
-                                    <label class="string optional" for="user_remember_me"> Recordarme</label>
+                                    <input id="user_password" type="password" name="password" size="30" placeholder="Contraseña" />
                                 </div>
                                 <div class="form-group frm-g centered">    
                                     <input class="btn btn-primary btn-large" type="submit" name="commit" value="Iniciar sesión" />
