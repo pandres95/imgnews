@@ -12,20 +12,13 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'r)lsl-a*ps&6tjwnv4c$#qnr$$df8pa9khr9u9gp)9_1(bq3z8'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 TEMPLATE_DEBUG = True
-
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -50,7 +43,6 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'pinteArg.urls'
-
 WSGI_APPLICATION = 'pinteArg.wsgi.application'
 
 
@@ -61,12 +53,9 @@ DATABASES = {
 'default': {
 'ENGINE': 'django.db.backends.mysql',
 'HOST':'127.0.0.1',
-'PASSWORD':'',
-'USER':'root',
-'PASSWORD':'Andr3s_Loquillo',
+'USER':'imgnews',
+'PASSWORD':'imgnews',
 'NAME':'imgnews'
-#'ENGINE': 'django.db.backends.sqlite3',
-#'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 }
 }
 
@@ -74,13 +63,9 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
 LANGUAGE_CODE = 'es-ar'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
@@ -90,3 +75,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT = BASE_DIR + '/media/'
 MEDIA_URL = '/media/'
+
+# Templates
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)

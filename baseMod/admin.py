@@ -1,5 +1,12 @@
 from django.contrib import admin
-from .models import Post, Autor, Seguidor, Zona, Lugar
+
+# Including models
+#from .fmodels.places import *
+#from .fmodels.users import Usuario, Autor
+#from .fmodels.posts import Post
+#from .fmodels.users import Seguidor
+
+from .models import *
 
 # Register your models here.
 class PostModel(admin.ModelAdmin):
